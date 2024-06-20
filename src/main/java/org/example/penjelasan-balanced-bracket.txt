@@ -1,0 +1,20 @@
+Penjelasan Kode terkait balanced bracket
+
+    1.Main Method:
+        Mendefinisikan array inputs dengan beberapa string yang mengandung tanda kurung.
+        Loop melalui setiap input dan memanggil checkBalancedBrackets untuk memeriksa keseimbangan tanda kurung, kemudian mencetak hasilnya.
+
+    2.checkBalancedBrackets Method:
+        Menggunakan Stack<Character> untuk melacak tanda kurung yang belum dipasangkan.
+        Loop melalui setiap karakter dalam string s.
+            Jika karakter adalah tanda kurung pembuka ({, [, atau (), maka dorong ke dalam stack.
+            Jika karakter adalah tanda kurung penutup (}, ], atau )), periksa apakah stack kosong (jika kosong, return "NO").
+            Jika tidak kosong, pop elemen dari stack dan periksa apakah elemen tersebut adalah pasangan yang cocok dengan karakter saat ini menggunakan metode isMatchingPair.
+        Setelah loop, jika stack kosong, return "YES"; jika tidak, return "NO".
+
+    3.isMatchingPair Method:
+        Mengambil dua karakter dan mengembalikan true jika mereka adalah pasangan tanda kurung yang cocok ({ cocok dengan }, [ cocok dengan ], dan ( cocok dengan )).
+
+    4. Kompleksitas
+    Waktu: O(n), di mana n adalah panjang string. Hal ini karena setiap karakter dalam string diproses satu kali, dan operasi stack (push dan pop) memiliki kompleksitas O(1).
+    Ruang: O(n), karena dalam kasus terburuk, stack dapat menyimpan hingga semua karakter pembuka dalam string.
